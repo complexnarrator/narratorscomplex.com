@@ -1,0 +1,15 @@
+RewriteEngine on
+
+Redirect 301 / https://fb.me/mikelbutler
+Redirect 301 /index.html https://fb.me/mikelbutler
+Redirect 301 /DaysofClass https://narratorscomplex.com/books/DaysofClass/purchase
+Redirect 301 /books/DaysofClass/purchase 301 https://geo.itunes.apple.com/book/id1596198145?at=1000l38R
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+                            
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteCond %{REQUEST_URI} ^(.+)\.html$
+RewriteRule (.*)\.html$ /$1 [R=301,L]
